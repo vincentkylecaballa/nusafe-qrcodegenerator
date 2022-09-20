@@ -1,34 +1,44 @@
 import React from "react";
-import { Card } from "react-bootstrap";
+import { Card, Row, Col } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '../../styles/card.scss'
+import { AiOutlineQrcode, AiOutlineHistory } from 'react-icons/ai';
+import {CgProfile} from 'react-icons/cg'
 
 const Module = () => {
     const cardDetails = [
         {
-            title: "My QR Code",
-            description: "Generate your QR Code",
-            image: "https://cdn-icons-png.flaticon.com/512/149/149071.png"
+            title: "Create QR Code",
+            icon: <AiOutlineQrcode size={96} color="#35408f"/>,
         },
         {
-            title: "My QR Code",
-            description: "Generate your QR Code",
-            image: "https://cdn-icons-png.flaticon.com/512/149/149071.png"
+            title: "QR Code History",
+            icon: <AiOutlineHistory size={96} color="#35408f"/>
+        },
+        {
+            title: "My Profile",
+            icon: <CgProfile size={96} color="#35408f" display="flex" vertical-align="center"/>
         },
     ]
 
     const renderCard = (card, index) => {
         return (
-        <Card style={{ width: "25rem", height: "10rem" }} key={index} className="box">
-            <Card.Img
-            variant="top"
-            src={card.image}
-            />
-            <Card.Body>
-            <Card.Title>{card.title}</Card.Title>
-            <Card.Text>{card.description}</Card.Text>
-            </Card.Body>
-        </Card>
+        <a style={{ cursor: 'pointer' }} onClick={index}>
+            <Card style={{ width: "20rem", height: "10rem" }} key={index} className="flex">
+                <Row>
+                    <Col md={4}>
+                        <div className='card-icon m-3'>
+                            {card.icon}
+                        </div>
+                    </Col>
+                    <Col md={8}>
+                        <Card.Body>
+                            <Card.Title>{card.title}</Card.Title>
+                        </Card.Body>
+                    </Col>
+                </Row>
+            </Card>
+        </a>
         );
     };
 
