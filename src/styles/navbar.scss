@@ -3,7 +3,9 @@
 }
 
 .nu-logo {
-    height: 5vw;
+    max-height: 5.5rem;
+    height: 100%;
+    object-fit: contain;
 }
 
 .text-logo-bottom,

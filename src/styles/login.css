@@ -1,6 +1,7 @@
 .login {
-  width: 100vw;
-  height: 100vh;
+  position: absolute;
+  width: 50%;
+  height: 50%;
   background-color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -13,54 +14,61 @@
           justify-content: center;
 }
 
-.login .login-container-right,
-.login .login-container-left {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.login .login-wrapper {
-  width: 70%;
-  height: 70%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.brand-text {
+.login-title {
   font-family: 'ClanOT', sans-serif;
+  font-weight: bold;
   color: #35408f;
 }
 
-.brand-text .text-logo {
+.login-title,
+.login-desc {
+  text-align: center;
+}
+
+.login-page {
+  padding-top: 6rem;
+  padding-bottom: 5rem;
+  padding-left: 25vh;
+  padding-right: 25vh;
+}
+
+.design-page {
+  padding-top: 10rem;
+  padding-bottom: 12rem;
+  padding-left: 25vh;
+  padding-right: 25vh;
+  background-color: #35408f;
+}
+
+.text-logo {
+  font-family: 'ClanOT', sans-serif;
+  color: white;
   font-size: 8vh;
   font-weight: bold;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   text-align: center;
 }
 
 .nu-logo {
-  height: 20vw;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  height: 40vh !important;
+  display: block;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: 2rem;
-  margin-right: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login-disclaimer {
+  padding-top: 1.2rem;
+  text-align: center;
+  font-size: 0.8vw;
+}
+
+.login-dropdown,
+.login-button {
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: #35408f;
 }
 /*# sourceMappingURL=login.css.map */

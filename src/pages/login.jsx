@@ -50,10 +50,10 @@ const Login = () => {
                     <Col md={6} className='design-page'>
                         <Row>
                             <div className='login-right'>
-                                <Col md={12}>
+                                <Col md={12} lg={12}>
                                     <img className="nu-logo" src={UnivLogo} alt="NU Logo" />
                                 </Col>
-                                <Col md={12}>
+                                <Col md={12} lg={12}>
                                     <div className="brand-text">
                                         <h2 className="text-logo">NU SAFE</h2>
                                     </div> 
