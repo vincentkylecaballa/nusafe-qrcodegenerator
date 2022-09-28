@@ -1,4 +1,4 @@
-.login {
+.register {
     position: absolute;
     width: 50%;
     height: 50%;
@@ -8,25 +8,35 @@
     justify-content: center;
 }
 
-.login-title {
+.register-desc {
+    font-size: 2vh;
+}
+
+#register-dropdown,
+.register-button {
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: #35408f;
+}
+
+.register-title {
     font-family: 'ClanOT', sans-serif;
     font-weight: bold;
     color: #35408f;
 }
 
-.login-title,
-.login-desc {
-    text-align: center;
-}
-
-.login-page {
-    padding-top: 6rem;
+.register-page {
+    padding-top: 2rem;
     padding-bottom: 5rem;
     padding-left: 25vh;
     padding-right: 25vh;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
 }
 
-.design-page {
+.design-register-page {
     padding-top: 10rem;
     padding-bottom: 12rem;
     padding-left: 25vh;
@@ -42,7 +52,7 @@
     text-align: center;
 }
 
-.nu-logo-login {
+.nu-logo-register {
     height: 40vh !important;
     display: block;
     align-items: center;
@@ -50,16 +60,8 @@
     margin-right: auto;
 }
 
-.login-disclaimer {
+.register-disclaimer {
     padding-top: 1.2rem;
     text-align: center;
     font-size: 0.8vw;
-}
-
-.login-dropdown,
-.login-button {
-    width: 100%;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    background-color: #35408f;
 }

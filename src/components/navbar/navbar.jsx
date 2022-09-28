@@ -13,7 +13,7 @@ const Navigation = () => {
                     <Navbar.Brand>
                         <Row>
                             <Col md={4}>
-                                <img className="nu-logo" height="5vw" src={UnivLogo} alt="NU Logo" />
+                                <img className="nu-logo" src={UnivLogo} alt="NU Logo" />
                             </Col>
                             <Col md={8}>
                                 <Row>
