@@ -1,6 +1,7 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Container, Row, Col, Button, Dropdown, DropdownButton, Form } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import UnivLogo from "../assets/images/nu-logo.png"
 import '../styles/register.scss'
 
@@ -31,12 +32,20 @@ const Register = () => {
                             <Form.Group className='mb-3'>
                                 <Form.Control type='text' placeholder='Enter Email Address' />
                             </Form.Group>
-                            <Form.Group className='mb-3'>
-                                <Form.Control type='text' placeholder='Enter First Name' />
-                            </Form.Group>
-                            <Form.Group className='mb-3'>
-                                <Form.Control type='text' placeholder='Enter Last Name' />
-                            </Form.Group>
+                            <Col md={12}>
+                                <Row>
+                                    <Col md={6}>
+                                        <Form.Group className='mb-3'>
+                                            <Form.Control type='text' placeholder='Enter First Name' />
+                                        </Form.Group>
+                                    </Col>
+                                    <Col md={6}>
+                                        <Form.Group className='mb-3'>
+                                            <Form.Control type='text' placeholder='Enter Last Name' />
+                                        </Form.Group>
+                                    </Col>
+                                </Row>
+                            </Col>
 
                             <p className='register-disclaimer text-center'>
                                 8 Characters minimum, atleast one upper case letter (A-Z), atleast one lower case letter (a-z), atleast one special character 
@@ -51,6 +60,7 @@ const Register = () => {
                                 Submit
                             </Button>
                         </Form>
+                        <Link to='/login'>Have an account? Sign In.</Link>
                     </Col>
                     <Col md={6} className='design-register-page'>
                         <Row>

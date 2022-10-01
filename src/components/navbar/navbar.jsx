@@ -25,7 +25,7 @@ const Navigation = () => {
                             </Col>
                         </Row>
                     </Navbar.Brand>
-                    <Button variant="outline-primary"><FiLogOut/>Logout</Button>
+                    <Button className='navbar-btn'><FiLogOut/>Logout</Button>
                 </Container>
             </Navbar>
         </>

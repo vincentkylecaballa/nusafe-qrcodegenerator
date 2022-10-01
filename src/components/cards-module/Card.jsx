@@ -24,7 +24,7 @@ const Module = () => {
     const renderCard = (card, index) => {
         return (
         <a style={{ cursor: 'pointer' }} onClick={index}>
-            <Card style={{ width: "20rem", height: "10rem" }} key={index} className="flex">
+            <Card style={{ width: "20rem", height: "10rem" }} key={index} className="card-module flex">
                 <Row>
                     <Col md={4}>
                         <div className='card-icon m-3'>

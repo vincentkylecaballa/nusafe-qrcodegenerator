@@ -1,5 +1,6 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Container, Col, Row, Image, Button, Card, FormGroup, Form } from "react-bootstrap";
+import '../../src/styles/myprofile.scss';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Navigation from "../components/navbar/navbar";
 
@@ -9,7 +10,93 @@ const MyProfile = () => {
         <>
             <Navigation/>
             <Container>
-                <h1>My Profile</h1>
+                <h1 className="myprofile-txt mt-5">My Profile</h1>
+
+                <Col md={12}>
+                    <Row>
+                        <Col md={3}>
+                            <Image className="profile-photo " src="https://square-vn.com/app/dscms/assets/images/person-3.jpg?v=1653932875" responsive />
+                            <Button>SELECT IMAGE</Button>
+                            <Button>DELETE</Button>
+                        </Col>
+                        <Col md={9}>
+                            <Card className='profile-card'>
+                                <Card.Header>Account Information</Card.Header>
+                                <div className="profile-wrapper">
+                                    <Card.Body>
+                                        <FormGroup>
+                                            <Col md={12}>
+                                                <Row>
+                                                    <Col md={2}>
+                                                        <Form.Label>NU Branch</Form.Label>
+                                                    </Col>
+                                                    <Col md={10}>
+                                                        <Form.Control
+                                                            type="text"
+                                                        />
+                                                    </Col>
+                                                </Row>
+                                            </Col>
+                                            <Col md={12}>
+                                                <Row>
+                                                    <Col md={2}>
+                                                        <Form.Label>Username</Form.Label>
+                                                    </Col>
+                                                    <Col md={10}>
+                                                        <Form.Control
+                                                            type="text"
+                                                        />
+                                                    </Col>
+                                                </Row>
+                                            </Col>
+                                            <Col md={12}>
+                                                <Row>
+                                                    <Col md={6}>
+                                                        <Row>
+                                                            <Col md={4}>
+                                                                <Form.Label>First Name</Form.Label>
+                                                            </Col>
+                                                            <Col md={8}>
+                                                                <Form.Control
+                                                                    type="text"
+                                                                />
+                                                            </Col>
+                                                        </Row>
+                                                    </Col>
+                                                    <Col md={6}>
+                                                        <Row>
+                                                            <Col md={4}>
+                                                                <Form.Label>Last Name</Form.Label>
+                                                            </Col>
+                                                            <Col md={8}>
+                                                                <Form.Control
+                                                                    type="text"
+                                                                />
+                                                            </Col>
+                                                        </Row>
+                                                    </Col>
+                                                </Row>
+                                            </Col>
+                                            <Col md={12}>
+                                                <Row>
+                                                    <Col md={2}>
+                                                        <Form.Label>Email Address</Form.Label>
+                                                    </Col>
+                                                    <Col md={10}>
+                                                        <Form.Control
+                                                            type="text"
+                                                        />
+                                                    </Col>
+                                                </Row>
+                                            </Col>
+                                        </FormGroup>
+                                        <Button>Edit Profile</Button>
+                                    </Card.Body>
+                                </div>
+                            </Card>
+                        </Col>
+                    </Row>
+                </Col>
             </Container>
         </>
     );

@@ -1,6 +1,6 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Container, Row, Col, Button, Dropdown, Form } from 'react-bootstrap';
+import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import UnivLogo from "../assets/images/nu-logo.png"
 import '../styles/login.scss'
@@ -14,22 +14,11 @@ const Login = () => {
                     <Col md={6} className="login-page">
                         <h1 className='login-title'>Welcome Back!</h1>
                         <p className='login-desc'>Log In to access the NU SAFETrace QR Code Geerator portal</p>
-                        <Dropdown>
-                            <Dropdown.Menu>
-                                <Dropdown.Item href="#/action-1">National University - Manila Campus</Dropdown.Item>
-                                <Dropdown.Item href="#/action-1">NU Baliwag</Dropdown.Item>
-                                <Dropdown.Item href="#/action-1">NU Clark</Dropdown.Item>
-                                <Dropdown.Item href="#/action-1">NU Dasmariñas</Dropdown.Item>
-                                <Dropdown.Item href="#/action-1">NU Fairview</Dropdown.Item>
-                                <Dropdown.Item href="#/action-1">NU Laguna</Dropdown.Item>
-                                <Dropdown.Item href="#/action-1">NU MOA</Dropdown.Item>
-                                <Dropdown.Item href="#/action-1">NU Nazareth School</Dropdown.Item>
-                            </Dropdown.Menu>
-                        </Dropdown>
+
                         <Form>
                             <Form.Group className='mb-3'>
-                                <Form.Label>Username</Form.Label>
-                                <Form.Control type='text' placeholder='Enter username' />
+                                <Form.Label>Username or Email Address</Form.Label>
+                                <Form.Control type='text' placeholder='Enter Username or Email Address' />
                             </Form.Group>
                             <Form.Group className='mb-3'>
                                 <Form.Label>Password</Form.Label>

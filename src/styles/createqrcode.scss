@@ -1,0 +1,31 @@
+.qrcode-wrapper {
+    margin-top: 1.5rem;
+    padding: 5rem;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+#generateQRCode {
+    height: 100%;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.qrcode-card {
+    height: 30vw;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.dashboard-title {
+    font-family: 'ClanOT', sans-serif;
+    font-weight: bold;
+}
+
+.card-header {
+    background-color: #35408f;
+    color: white;
+    font-family: 'ClanOT', sans-serif;
+    font-weight: bold;
+}
