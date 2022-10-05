@@ -2,6 +2,12 @@
     border: 2px black solid;
 }
 
+.form-control,
+.form-label {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
 .profile-card {
     height: 65vh;
     overflow: hidden;
@@ -9,6 +15,7 @@
 
 .profile-wrapper {
     margin-top: 1.5rem;
+    padding: 2rem;
     max-height: 100vh !important;
     margin: 0;
 }

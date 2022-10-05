@@ -15,9 +15,13 @@ const MyProfile = () => {
                 <Col md={12}>
                     <Row>
                         <Col md={3}>
-                            <Image className="profile-photo " src="https://square-vn.com/app/dscms/assets/images/person-3.jpg?v=1653932875" responsive />
-                            <Button>SELECT IMAGE</Button>
-                            <Button>DELETE</Button>
+                            <Image className="profile-photo my-auto" src="https://square-vn.com/app/dscms/assets/images/person-3.jpg?v=1653932875" responsive />
+                            <Col md={12}>
+                                <Button className='w-75 d-flex justify-content-center mt-2 mb-2'>Upload Profile Photo</Button>
+                            </Col>
+                            <Col md={12} >
+                                <Button className='w-75 d-flex justify-content-center mt-2 mb-2'>Remove Profile Photo</Button>
+                            </Col>
                         </Col>
                         <Col md={9}>
                             <Card className='profile-card'>

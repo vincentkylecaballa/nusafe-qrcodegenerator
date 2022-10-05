@@ -4,10 +4,35 @@ import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import UnivLogo from "../assets/images/nu-logo.png"
 import '../styles/login.scss'
+import PropTypes from 'prop-types';
 
-const Login = () => {
+async function loginUser(credentials) {
+    return fetch('http://localhost:8080/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(credentials)
+    })
+        .then(data => data.json())
+}
+
+const Login = ({setToken}) => {
+
+    const [username, setUsername] = React.useState();
+    const [password, setPassword] = React.useState();
+
+    const handleSubmit = async e => {
+        e.preventDefault();
+        const token = await loginUser({
+            username,
+            password
+        });
+        setToken(token);
+    }
+
     return ( 
-    <>
+        <>
         <Container fluid>
             <div className='login-wrapper'>
                 <Row>
@@ -15,14 +40,14 @@ const Login = () => {
                         <h1 className='login-title'>Welcome Back!</h1>
                         <p className='login-desc'>Log In to access the NU SAFETrace QR Code Geerator portal</p>
 
-                        <Form>
+                        <Form onSubmit={handleSubmit}>
                             <Form.Group className='mb-3'>
-                                <Form.Label>Username or Email Address</Form.Label>
-                                <Form.Control type='text' placeholder='Enter Username or Email Address' />
+                                <Form.Label className='m-0'>Username or Email Address</Form.Label>
+                                <Form.Control type='text' placeholder='Enter Username or Email Address' onChange={e => setUsername(e.target.value)}/>
                             </Form.Group>
                             <Form.Group className='mb-3'>
-                                <Form.Label>Password</Form.Label>
-                                <Form.Control type='password' placeholder='Enter password' />
+                                <Form.Label className='m-0'>Password</Form.Label>
+                                <Form.Control type='password' placeholder='Enter password' onChange={e => setPassword(e.target.value)} />
                             </Form.Group>
                             <a>Forgot Password?</a>
                             <Button className='login-button' variant='primary' type='submit'>
@@ -51,8 +76,12 @@ const Login = () => {
                 </Row>
             </div>
         </Container>
-    </>
-    );
+        </>
+    ); 
+};
+
+Login.propTypes = {
+    setToken: PropTypes.func.isRequired
 };
 
 export default Login;

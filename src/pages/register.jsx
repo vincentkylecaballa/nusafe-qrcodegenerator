@@ -6,6 +6,12 @@ import UnivLogo from "../assets/images/nu-logo.png"
 import '../styles/register.scss'
 
 const Register = () => {
+    const [branch, setBranch] = React.useState();
+    const [username, setUsername] = React.useState();
+    const [emailAddres, setEmailAddress] = React.useState();
+    const [firstName, setFirstName] = React.useState();
+    const [lastName, setLastName] = React.useState();
+
     return ( 
     <>
         <Container fluid>
@@ -14,34 +20,38 @@ const Register = () => {
                     <Col md={6} className="register-page">
                         <h1 className='register-title text-center'>Create New Account</h1>
                         <p className='register-desc text-center'>Create your credentials to access the NU SAFETrace QR Code Generator Portal</p>
-                       
                         <Form> 
-                            <DropdownButton id='register-dropdown' title='Select NU Branch'>
-                                <Dropdown.Item href="#/action-1">National University - Manila Campus</Dropdown.Item>
-                                <Dropdown.Item href="#/action-1">NU Baliwag</Dropdown.Item>
-                                <Dropdown.Item href="#/action-1">NU Clark</Dropdown.Item>
-                                <Dropdown.Item href="#/action-1">NU Dasmariñas</Dropdown.Item>
-                                <Dropdown.Item href="#/action-1">NU Fairview</Dropdown.Item>
-                                <Dropdown.Item href="#/action-1">NU Laguna</Dropdown.Item>
-                                <Dropdown.Item href="#/action-1">NU MOA</Dropdown.Item>
-                                <Dropdown.Item href="#/action-1">NU Nazareth School</Dropdown.Item>
-                            </DropdownButton>
+                            <Form.Control as='select' value={type} className='mb-3'
+                            onChange={e => setBranch(e.target.value)}>
+                                <option>National University - Manila</option>
+                                <option>NU Baliwag</option>
+                                <option>NU Dasmarinas</option>
+                                <option>NU Fairview</option>
+                                <option>NU Laguna</option>
+                                <option>NU Lipa</option>
+                                <option>NU MOA</option>
+                                <option>NU Nazareth</option>
+                            </Form.Control>
                             <Form.Group className='mb-3'>
-                                <Form.Control type='text' placeholder='Enter Username' />
+                                <Form.Control type='text' placeholder='Enter Username' 
+                                onChange={(e) => setUsername(e.target.value)}/>
                             </Form.Group>
                             <Form.Group className='mb-3'>
-                                <Form.Control type='text' placeholder='Enter Email Address' />
+                                <Form.Control type='text' placeholder='Enter Email Address' 
+                                onChange={(e) => setEmailAddress(e.target.value)}/>
                             </Form.Group>
                             <Col md={12}>
                                 <Row>
                                     <Col md={6}>
                                         <Form.Group className='mb-3'>
-                                            <Form.Control type='text' placeholder='Enter First Name' />
+                                            <Form.Control type='text' placeholder='Enter First Name' 
+                                            onChange={(e) => setFirstName(e.target.value)}/>
                                         </Form.Group>
                                     </Col>
                                     <Col md={6}>
                                         <Form.Group className='mb-3'>
-                                            <Form.Control type='text' placeholder='Enter Last Name' />
+                                            <Form.Control type='text' placeholder='Enter Last Name' 
+                                                onChange={(e) => setLastName(e.target.value)}/>
                                         </Form.Group>
                                     </Col>
                                 </Row>
