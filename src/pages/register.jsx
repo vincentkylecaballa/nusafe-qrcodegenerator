@@ -1,17 +1,37 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Container, Row, Col, Button, Dropdown, DropdownButton, Form } from 'react-bootstrap';
+import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import UnivLogo from "../assets/images/nu-logo.png"
 import '../styles/register.scss'
 
 const Register = () => {
-    const [branch, setBranch] = React.useState();
-    const [username, setUsername] = React.useState();
-    const [emailAddres, setEmailAddress] = React.useState();
-    const [firstName, setFirstName] = React.useState();
-    const [lastName, setLastName] = React.useState();
+    const [branch, setBranch] = React.useState("");
+    const [username, setUsername] = React.useState("");
+    const [emailAddress, setEmailAddress] = React.useState("");
+    const [firstName, setFirstName] = React.useState("");
+    const [lastName, setLastName] = React.useState("");
+    const [password, setPassword] = React.useState("");
+    const [confirmPassword, setConfirmPassword] = React.useState("");
 
+    const handleSubmit = async(event) => {
+        event.preventDefault();
+
+        await fetch('http://localhost:3000/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: await JSON.stringify({
+                branch,
+                username,
+                emailAddress,
+                firstName,
+                lastName,
+                password
+            }),
+        });
+    }
     return ( 
     <>
         <Container fluid>
@@ -20,11 +40,12 @@ const Register = () => {
                     <Col md={6} className="register-page">
                         <h1 className='register-title text-center'>Create New Account</h1>
                         <p className='register-desc text-center'>Create your credentials to access the NU SAFETrace QR Code Generator Portal</p>
-                        <Form> 
-                            <Form.Control as='select' value={type} className='mb-3'
+                        <Form onSubmit={handleSubmit}> 
+                            <Form.Control as='select' value={branch} className='mb-3'
                             onChange={e => setBranch(e.target.value)}>
                                 <option>National University - Manila</option>
                                 <option>NU Baliwag</option>
+                                <option>NU Clark</option>
                                 <option>NU Dasmarinas</option>
                                 <option>NU Fairview</option>
                                 <option>NU Laguna</option>
@@ -33,39 +54,43 @@ const Register = () => {
                                 <option>NU Nazareth</option>
                             </Form.Control>
                             <Form.Group className='mb-3'>
-                                <Form.Control type='text' placeholder='Enter Username' 
+                                <Form.Control type='text' placeholder='Enter Username' value={username}
                                 onChange={(e) => setUsername(e.target.value)}/>
                             </Form.Group>
                             <Form.Group className='mb-3'>
-                                <Form.Control type='text' placeholder='Enter Email Address' 
+                                <Form.Control type='text' placeholder='Enter Email Address' value={emailAddress}
                                 onChange={(e) => setEmailAddress(e.target.value)}/>
                             </Form.Group>
                             <Col md={12}>
                                 <Row>
                                     <Col md={6}>
                                         <Form.Group className='mb-3'>
-                                            <Form.Control type='text' placeholder='Enter First Name' 
+                                            <Form.Control type='text' placeholder='Enter First Name' value={firstName}
                                             onChange={(e) => setFirstName(e.target.value)}/>
                                         </Form.Group>
                                     </Col>
                                     <Col md={6}>
                                         <Form.Group className='mb-3'>
-                                            <Form.Control type='text' placeholder='Enter Last Name' 
+                                            <Form.Control type='text' placeholder='Enter Last Name' value={lastName}
                                                 onChange={(e) => setLastName(e.target.value)}/>
                                         </Form.Group>
                                     </Col>
                                 </Row>
                             </Col>
-
                             <p className='register-disclaimer text-center'>
                                 8 Characters minimum, atleast one upper case letter (A-Z), atleast one lower case letter (a-z), atleast one special character 
                             </p> 
                             <Form.Group className='mb-3'>
-                                <Form.Control type='password' placeholder='Enter Password' />
+                                <Form.Control type='password' placeholder='Enter Password' value={password}   
+                                    onChange={(e) => setPassword(e.target.value)}
+                                />
                             </Form.Group>
                             <Form.Group className='mb-3'>
-                                <Form.Control type='password' placeholder='Confirm Password' />
+                                <Form.Control type='password' placeholder='Confirm Password' value={confirmPassword} 
+                                    onChange={(e) => setConfirmPassword(e.target.value)}
+                                />
                             </Form.Group>
+                            
                             <Button className='login-button' variant='primary' type='submit'>
                                 Submit
                             </Button>
